@@ -1,0 +1,78 @@
+%% LyX 2.3.6.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amstext}
+\usepackage{amssymb}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\begin{table}
+\noindent \begin{centering}
+\renewcommand*{\arraystretch}{1.5}%
+\begin{tabular}{|c|c|c|}
+\hline 
+Symbol & Description & Size\tabularnewline
+\hline 
+\hline 
+$m$ & number of stocks & $m\in\mathbb{R}^{50}$\tabularnewline
+\hline 
+$T$ & window size & $T\in\mathbb{R}^{250}$\tabularnewline
+\hline 
+$\tau$ & number of future time, $t$ & $\tau\in\mathbb{R}^{504}$\tabularnewline
+\hline 
+$X$ & time-lagged returns & $X\in\mathbb{R}^{504\times50\times250}$\tabularnewline
+\hline 
+$Y$ & future returns & $Y\in\mathbb{R}^{504\times50}$\tabularnewline
+\hline 
+$\beta$ & unknown (latent) parameters & $\beta\in\mathbb{R}^{10}$\tabularnewline
+\hline 
+$A$ & projection matrix & $A\in\mathbb{R}^{250\times10}$\tabularnewline
+\hline 
+$\textrm{vec}(X)$ & column-stack of $X$ & $\textrm{vec}(X)\in\mathbb{R}^{25200\times250}$\tabularnewline
+\hline 
+$\textrm{vec}(Y)$ & column-stack of $Y$ & $\textrm{vec}(Y)\in\mathbb{R}^{25200}$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{}
+
+\end{table}
+
+\begin{table}
+
+\noindent \begin{centering}
+\begin{tabular}{|l|l|c|}
+\cline{2-3} \cline{3-3} 
+\multicolumn{1}{l|}{} & Method & Score\tabularnewline
+\hline 
+1 & QRT Brute Force & 0.05168\tabularnewline
+\hline 
+2 & SVD of $rr^{T}$ & 0.13319\tabularnewline
+\hline 
+3 & SVD of $\tilde{X}$ & 0.03956\tabularnewline
+\hline 
+4 & Bayesian - SVD of $rr^{T}$ & 0.13376\tabularnewline
+\hline 
+5 & Bayesian - SVD of $\tilde{X}$ & 0.03950\tabularnewline
+\hline 
+6 & Custom Factors & 0.02949\tabularnewline
+\hline 
+7 & Deep Learning - Autoencoder & \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{}
+
+\end{table}
+
+\end{document}
